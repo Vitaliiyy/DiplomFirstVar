@@ -125,7 +125,7 @@ public class CheckoutTest {
         buy.setCardYear(DataUtils.getValidYear());
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
+        buy.fieldNecessarily();
         buy.incorrectFormat();
         assertEquals(0, getOrderCount());
     }
@@ -183,8 +183,7 @@ public class CheckoutTest {
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
         buy.fieldNecessarilyHidden();
-        buy.incorrectFormatHidden();
-        buy.cardExpirationError();
+        buy.incorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -198,8 +197,7 @@ public class CheckoutTest {
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
         buy.fieldNecessarilyHidden();
-        buy.incorrectFormatHidden();
-        buy.cardExpirationError();
+        buy.incorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -213,8 +211,7 @@ public class CheckoutTest {
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
         buy.fieldNecessarilyHidden();
-        buy.incorrectFormatHidden();
-        buy.cardExpirationError();
+        buy.incorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -248,7 +245,7 @@ public class CheckoutTest {
     }
 
     @Test
-    @DisplayName("16. Карта одобрена (APPROVED), короткое значение год год")
+    @DisplayName("16. Карта одобрена (APPROVED), короткое значение год")
     public void shouldErrorYearIncorrect() {
         buy.setCardNumber(DataUtils.getApprovedCard());
         buy.setCardMonth(DataUtils.getMonthNumber());
@@ -296,7 +293,7 @@ public class CheckoutTest {
         buy.setCardNumber(DataUtils.getApprovedCard());
         buy.setCardMonth(DataUtils.getMonthNumber());
         buy.setCardYear(DataUtils.getValidYear());
-        buy.setCardholder(DataUtils.getShotName());
+        buy.setCardholder(DataUtils.getShortName());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
         buy.fieldNecessarilyHidden();

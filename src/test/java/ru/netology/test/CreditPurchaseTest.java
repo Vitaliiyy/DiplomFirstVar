@@ -5,7 +5,8 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import ru.netology.data.DataUtils;
 import ru.netology.data.DatabaseHelper;
-import ru.netology.page.PurchasePage;
+import ru.netology.page.CreditPurchase;
+
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,24 +14,24 @@ import static ru.netology.data.DatabaseHelper.getOrderCount;
 
 public class CreditPurchaseTest {
 
-    private PurchasePage buyInCredit;
+    private CreditPurchase buyInCredit;
+
     String url = System.getProperty("sut.url");
 
     @BeforeEach
     public void openPage() {
         open(url);
-        buyInCredit = new PurchasePage();
-        buyInCredit.buyCard();
-
+        buyInCredit = new CreditPurchase();
+        buyInCredit.buyCredit();
     }
 
     @BeforeAll
-    static void setAll() {
+    static void setUpAll() {
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @AfterAll
-    static void tearDown() {
+    static void tearDownAll() {
         SelenideLogger.removeListener("allure");
     }
 
@@ -49,7 +50,7 @@ public class CreditPurchaseTest {
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
         buyInCredit.buySuccess();
-        assertEquals("APPROVED", DatabaseHelper.getPaymentStatus());
+        assertEquals("APPROVED", DatabaseHelper.getCreditStatus());
     }
 
     @Test
@@ -62,7 +63,7 @@ public class CreditPurchaseTest {
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
         buyInCredit.buyError();
-        assertEquals("DECLINED", DatabaseHelper.getPaymentStatus());
+        assertEquals("DECLINED", DatabaseHelper.getCreditStatus());
     }
 
     @Test
@@ -125,7 +126,7 @@ public class CreditPurchaseTest {
         buyInCredit.setCardYear(DataUtils.getValidYear());
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
+        buyInCredit.fieldNecessarily();
         buyInCredit.incorrectFormat();
         assertEquals(0, getOrderCount());
     }
@@ -183,8 +184,7 @@ public class CreditPurchaseTest {
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
         buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormatHidden();
-        buyInCredit.cardExpirationError();
+        buyInCredit.incorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -198,8 +198,7 @@ public class CreditPurchaseTest {
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
         buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormatHidden();
-        buyInCredit.cardExpirationError();
+        buyInCredit.incorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -213,8 +212,7 @@ public class CreditPurchaseTest {
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
         buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormatHidden();
-        buyInCredit.cardExpirationError();
+        buyInCredit.incorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -296,7 +294,7 @@ public class CreditPurchaseTest {
         buyInCredit.setCardNumber(DataUtils.getApprovedCard());
         buyInCredit.setCardMonth(DataUtils.getMonthNumber());
         buyInCredit.setCardYear(DataUtils.getValidYear());
-        buyInCredit.setCardholder(DataUtils.getShotName());
+        buyInCredit.setCardholder(DataUtils.getShortName());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
         buyInCredit.fieldNecessarilyHidden();

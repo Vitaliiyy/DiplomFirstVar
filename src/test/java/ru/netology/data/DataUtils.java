@@ -71,7 +71,7 @@ public class DataUtils {
 
     public static String getCurrentYear() {
         LocalDate currentYear = LocalDate.now();
-        return currentYear.format(DateTimeFormatter.ofPattern("YY"));
+        return currentYear.format(DateTimeFormatter.ofPattern("yy"));
     }
 
     public static String getValidYear() {
@@ -79,19 +79,20 @@ public class DataUtils {
         int rnd = (int) random;
         LocalDate currentData = LocalDate.now();
         LocalDate currentYear = currentData.plusYears(rnd);
-        return currentYear.format(DateTimeFormatter.ofPattern("YY"));
+        return currentYear.format(DateTimeFormatter.ofPattern("yy"));
     }
 
     public static String getYearsAfterEndOfExpiration() {
         LocalDate currentData = LocalDate.now();
         LocalDate currentYear = currentData.plusYears(6);
-        return currentYear.format(DateTimeFormatter.ofPattern("YY"));
+        return currentYear.format(DateTimeFormatter.ofPattern("yy"));
+
     }
 
     public static String getYearNumberLessCurrentYear() {
         LocalDate currentData = LocalDate.now();
         LocalDate currentYear = currentData.minusYears(1);
-        return currentYear.format(DateTimeFormatter.ofPattern("YY"));
+        return currentYear.format(DateTimeFormatter.ofPattern("yy"));
     }
 
     public static String getMonthNumberLessThanThisMonth() {
@@ -116,7 +117,7 @@ public class DataUtils {
         return specSymbols[new Random().nextInt(specSymbols.length)];
     }
 
-    public static String getShotName() {
+    public static String getShortName() {
         var shotNames = new String[]{
                 "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "W", "Z"
         };
