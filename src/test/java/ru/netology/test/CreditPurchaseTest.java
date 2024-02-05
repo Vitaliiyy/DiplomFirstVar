@@ -22,7 +22,7 @@ public class CreditPurchaseTest {
     public void openPage() {
         open(url);
         buyInCredit = new CreditPurchase();
-        buyInCredit.buyCredit();
+        buyInCredit.checkBuyCredit();
     }
 
     @BeforeAll
@@ -49,7 +49,7 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.buySuccess();
+        buyInCredit.checkBuySuccess();
         assertEquals("APPROVED", DatabaseHelper.getCreditStatus());
     }
 
@@ -62,7 +62,7 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.buyError();
+        buyInCredit.checkBuyError();
         assertEquals("DECLINED", DatabaseHelper.getCreditStatus());
     }
 
@@ -74,8 +74,8 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormat();
+        buyInCredit.checkFieldNecessarilyHidden();
+        buyInCredit.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -87,8 +87,8 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormat();
+        buyInCredit.checkFieldNecessarilyHidden();
+        buyInCredit.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -100,8 +100,8 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormat();
+        buyInCredit.checkFieldNecessarilyHidden();
+        buyInCredit.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -113,8 +113,8 @@ public class CreditPurchaseTest {
         buyInCredit.setCardYear(DataUtils.getValidYear());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.incorrectFormatHidden();
-        buyInCredit.fieldNecessarily();
+        buyInCredit.checkIncorrectFormatHidden();
+        buyInCredit.checkFieldNecessarily();
         assertEquals(0, getOrderCount());
     }
 
@@ -126,8 +126,8 @@ public class CreditPurchaseTest {
         buyInCredit.setCardYear(DataUtils.getValidYear());
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarily();
-        buyInCredit.incorrectFormat();
+        buyInCredit.checkFieldNecessarily();
+        buyInCredit.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -140,8 +140,8 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormat();
+        buyInCredit.checkFieldNecessarilyHidden();
+        buyInCredit.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -154,8 +154,8 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormat();
+        buyInCredit.checkFieldNecessarilyHidden();
+        buyInCredit.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -168,9 +168,9 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormatHidden();
-        buyInCredit.cardExpirationError();
+        buyInCredit.checkFieldNecessarilyHidden();
+        buyInCredit.checkIncorrectFormatHidden();
+        buyInCredit.checkCardExpirationError();
         assertEquals(0, getOrderCount());
     }
 
@@ -183,8 +183,8 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormat();
+        buyInCredit.checkFieldNecessarilyHidden();
+        buyInCredit.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -197,8 +197,8 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormat();
+        buyInCredit.checkFieldNecessarilyHidden();
+        buyInCredit.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -211,8 +211,8 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormat();
+        buyInCredit.checkFieldNecessarilyHidden();
+        buyInCredit.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -225,9 +225,9 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormatHidden();
-        buyInCredit.cardExpirationError();
+        buyInCredit.checkFieldNecessarilyHidden();
+        buyInCredit.checkIncorrectFormatHidden();
+        buyInCredit.checkCardExpirationError();;
         assertEquals(0, getOrderCount());
     }
 
@@ -240,8 +240,8 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormat();
+        buyInCredit.checkFieldNecessarilyHidden();
+        buyInCredit.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -254,8 +254,8 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormat();
+        buyInCredit.checkFieldNecessarilyHidden();
+        buyInCredit.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -268,9 +268,9 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormatHidden();
-        buyInCredit.cardExpirationError();
+        buyInCredit.checkFieldNecessarilyHidden();
+        buyInCredit.checkIncorrectFormatHidden();
+        buyInCredit.checkCardExpirationError();
         assertEquals(0, getOrderCount());
     }
 
@@ -283,8 +283,8 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getIncorrectCardHolder());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormat();
+        buyInCredit.checkFieldNecessarilyHidden();
+        buyInCredit.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -297,8 +297,8 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getShortName());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormat();
+        buyInCredit.checkFieldNecessarilyHidden();
+        buyInCredit.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -311,8 +311,8 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getLongName());
         buyInCredit.setCardCvv(DataUtils.get3Digits());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormat();
+        buyInCredit.checkFieldNecessarilyHidden();
+        buyInCredit.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -325,8 +325,8 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.setCardCvv(DataUtils.get000());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormat();
+        buyInCredit.checkFieldNecessarilyHidden();
+        buyInCredit.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -339,8 +339,8 @@ public class CreditPurchaseTest {
         buyInCredit.setCardholder(DataUtils.getNameCardholder());
         buyInCredit.setCardCvv(DataUtils.get1Digit());
         buyInCredit.clickContinueButton();
-        buyInCredit.fieldNecessarilyHidden();
-        buyInCredit.incorrectFormat();
+        buyInCredit.checkFieldNecessarilyHidden();
+        buyInCredit.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 

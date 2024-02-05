@@ -20,7 +20,7 @@ public class CheckoutTest {
     public void openPage() {
         open(url);
         buy = new PurchasePage();
-        buy.buyCard();
+        buy.checkBuyCard();
 
     }
 
@@ -48,7 +48,7 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.buySuccess();
+        buy.checkBuySuccess();
         assertEquals("APPROVED", DatabaseHelper.getPaymentStatus());
     }
 
@@ -61,7 +61,7 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.buyError();
+        buy.checkBuyError();
         assertEquals("DECLINED", DatabaseHelper.getPaymentStatus());
     }
 
@@ -73,8 +73,8 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
-        buy.incorrectFormat();
+        buy.checkFieldNecessarilyHidden();
+        buy.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -86,8 +86,8 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
-        buy.incorrectFormat();
+        buy.checkFieldNecessarilyHidden();
+        buy.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -99,8 +99,8 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
-        buy.incorrectFormat();
+        buy.checkFieldNecessarilyHidden();
+        buy.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -112,8 +112,8 @@ public class CheckoutTest {
         buy.setCardYear(DataUtils.getValidYear());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.incorrectFormatHidden();
-        buy.fieldNecessarily();
+        buy.checkIncorrectFormatHidden();
+        buy.checkFieldNecessarily();
         assertEquals(0, getOrderCount());
     }
 
@@ -125,8 +125,8 @@ public class CheckoutTest {
         buy.setCardYear(DataUtils.getValidYear());
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.clickContinueButton();
-        buy.fieldNecessarily();
-        buy.incorrectFormat();
+        buy.checkFieldNecessarily();
+        buy.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -139,8 +139,8 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
-        buy.incorrectFormat();
+        buy.checkFieldNecessarilyHidden();
+        buy.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -153,8 +153,8 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
-        buy.incorrectFormat();
+        buy.checkFieldNecessarilyHidden();
+        buy.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -167,9 +167,9 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
-        buy.incorrectFormatHidden();
-        buy.cardExpirationError();
+        buy.checkFieldNecessarilyHidden();
+        buy.checkIncorrectFormatHidden();
+        buy.checkCardExpirationError();
         assertEquals(0, getOrderCount());
     }
 
@@ -182,8 +182,8 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
-        buy.incorrectFormat();
+        buy.checkFieldNecessarilyHidden();
+        buy.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -196,8 +196,8 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
-        buy.incorrectFormat();
+        buy.checkFieldNecessarilyHidden();
+        buy.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -210,8 +210,8 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
-        buy.incorrectFormat();
+        buy.checkFieldNecessarilyHidden();
+        buy.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -224,9 +224,9 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
-        buy.incorrectFormatHidden();
-        buy.cardExpirationError();
+        buy.checkFieldNecessarilyHidden();
+        buy.checkIncorrectFormatHidden();
+        buy.checkCardExpirationError();
         assertEquals(0, getOrderCount());
     }
 
@@ -239,8 +239,8 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
-        buy.incorrectFormat();
+        buy.checkFieldNecessarilyHidden();
+        buy.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -253,8 +253,8 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
-        buy.incorrectFormat();
+        buy.checkFieldNecessarilyHidden();
+        buy.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -267,9 +267,9 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
-        buy.incorrectFormatHidden();
-        buy.cardExpirationError();
+        buy.checkFieldNecessarilyHidden();
+        buy.checkIncorrectFormatHidden();
+        buy.checkCardExpirationError();
         assertEquals(0, getOrderCount());
     }
 
@@ -282,8 +282,8 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getIncorrectCardHolder());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
-        buy.incorrectFormat();
+        buy.checkFieldNecessarilyHidden();
+        buy.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -296,8 +296,8 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getShortName());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
-        buy.incorrectFormat();
+        buy.checkFieldNecessarilyHidden();
+        buy.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -310,8 +310,8 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getLongName());
         buy.setCardCvv(DataUtils.get3Digits());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
-        buy.incorrectFormat();
+        buy.checkFieldNecessarilyHidden();
+        buy.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -324,8 +324,8 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.setCardCvv(DataUtils.get000());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
-        buy.incorrectFormat();
+        buy.checkFieldNecessarilyHidden();
+        buy.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 
@@ -338,8 +338,8 @@ public class CheckoutTest {
         buy.setCardholder(DataUtils.getNameCardholder());
         buy.setCardCvv(DataUtils.get1Digit());
         buy.clickContinueButton();
-        buy.fieldNecessarilyHidden();
-        buy.incorrectFormat();
+        buy.checkFieldNecessarilyHidden();
+        buy.checkIncorrectFormat();
         assertEquals(0, getOrderCount());
     }
 

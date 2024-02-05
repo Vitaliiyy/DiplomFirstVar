@@ -27,7 +27,7 @@ public class CreditPurchase {
     private SelenideElement fieldNecessarily = $(byText("Поле обязательно для заполнения"));
     private SelenideElement continueButton = $$("button").find(exactText("Продолжить"));
 
-    public void buyCredit() {
+    public void checkBuyCredit() {
         mainHead.shouldBe(visible);
         buyInCreditButton.click();
         buyInCreditHead.shouldBe(visible);
@@ -57,35 +57,35 @@ public class CreditPurchase {
         continueButton.click();
     }
 
-    public void buySuccess() {
+    public void checkBuySuccess() {
         buySuccess.shouldBe(visible, Duration.ofSeconds(10));
     }
 
-    public void buyError() {
+    public void checkBuyError() {
         buyError.shouldBe(visible, Duration.ofSeconds(10));
     }
 
-    public void incorrectFormat() {
+    public void checkIncorrectFormat() {
         incorrectFormat.shouldBe(visible);
     }
 
-    public void incorrectFormatHidden() {
+    public void checkIncorrectFormatHidden() {
         incorrectFormat.shouldBe(hidden);
     }
 
-    public void cardExpirationError() {
+    public void checkCardExpirationError() {
         cardExpirationError.shouldBe(visible);
     }
 
-    public void cardExpired() {
+    public void checkCardExpired() {
         cardExpired.shouldBe(visible);
     }
 
-    public void fieldNecessarily() {
+    public void checkFieldNecessarily() {
         fieldNecessarily.shouldBe(visible);
     }
 
-    public void fieldNecessarilyHidden() {
+    public void checkFieldNecessarilyHidden() {
         fieldNecessarily.shouldBe(hidden);
     }
 
